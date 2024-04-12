@@ -1,0 +1,9 @@
+{
+    "id": "python",
+    "version": "0.1.0",
+    "name": "Python with GPU",
+    "description": "Python with GPU",
+    "platforms": [
+        "Python"
+    ]
+}

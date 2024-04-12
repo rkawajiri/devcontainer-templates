@@ -1,0 +1,37 @@
+{
+    "name": "Python with GPU",
+    "dockerComposeFile": [
+        "docker-compose.yml",
+        // "docker-compose.gpu.yml" // Comment out
+    ],
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    // Use this environment variable if you need to bind mount your local source code into a new container.
+    "remoteEnv": {
+        "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+        "ghcr.io/devcontainers/features/git-lfs:1": {},
+        "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+        "ghcr.io/joshuanianji/devcontainer-features/gcloud-cli-persistence:1": {},
+        "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bierner.github-markdown-preview",
+                "GitHub.copilot",
+                "google-cloud-spanner-ecosystem.google-cloud-spanner-driver",
+                "ms-python.black-formatter",
+                "ms-python.flake8",
+                "ms-python.isort",
+                "ms-python.mypy-type-checker",
+                "qufiwefefwoyn.inline-sql-syntax",
+                "tamasfe.even-better-toml"
+            ]
+        }
+    },
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "python -m pip install --upgrade pip poetry"
+}
